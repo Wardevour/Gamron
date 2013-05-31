@@ -3,12 +3,12 @@ printf "Enter the name of the repo directory: "
 read repopath
 cd $repopath
 
-git pull
-
 git branch
 printf "Enter the branch you want to commit to: "
 read branch
 git checkout $branch
+
+git pull
 
 git status
 
