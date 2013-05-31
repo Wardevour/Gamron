@@ -3,6 +3,11 @@ printf "Enter the name of the repo directory: "
 read repopath
 cd $repopath
 
+git branch
+printf "Enter the branch you want to commit to: "
+read branch
+git checkout $branch
+
 git status
 
 printf "\nWould you like to add tracked files and commit? y/n "
@@ -30,4 +35,13 @@ else
 	printf "\nEnter Commit Description: "
 	read comsg
 	git commit -m "$comsg"
+fi
+
+printf "\nWould you like to push to $branch? y/n "
+read -n 1 ans2
+
+if [ $ans2 = "y" ]; then
+git push origin $branch
+else
+printf "\nPUSH CANCELED"
 fi
