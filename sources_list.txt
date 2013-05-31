@@ -1,0 +1,4 @@
+./src/com/gamron/dgenerate/Hero.java
+./src/com/gamron/dgenerate/RpgDice.java
+./src/com/gamron/MainClass.java
+./src/gui/EscMenu.java
