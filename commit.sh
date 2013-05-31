@@ -1,0 +1,33 @@
+#!/bin/bash
+printf "Enter the name of the repo directory: "
+read repopath
+cd $repopath
+
+git status
+
+printf "\nWould you like to add tracked files and commit? y/n "
+read -n 1 ans1
+
+if [ $ans1 = "y" ]; then
+	printf "\nEnter Commit Description: "
+	read comsg
+	git commit -am "$comsg"
+else
+	git status -s
+	printf "\nHow many files do you wish to add? "
+	read addnum
+	
+	count=1
+	while [[ $count -le $addnum ]]
+	do
+		git status -s
+		printf "\nEnter file $count : "
+		read filenme
+		git add $filenme
+		((count++))
+	done
+	
+	printf "\nEnter Commit Description: "
+	read comsg
+	git commit -m "$comsg"
+fi
