@@ -13,7 +13,7 @@ git checkout $branch
 git status
 
 printf "\nWould you like to add tracked files and commit? y/n "
-read -n 1 ans1
+read ans1
 
 if [ $ans1 = "y" ]; then
 	printf "\nEnter Commit Description: "
@@ -40,9 +40,10 @@ else
 fi
 
 printf "\nWould you like to push to $branch? y/n "
-read -n 1 ans2
+read ans2
 
 if [ $ans2 = "y" ]; then
+echo ""
 git push origin $branch
 else
 printf "\nPUSH CANCELED"
