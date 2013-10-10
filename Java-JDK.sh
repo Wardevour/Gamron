@@ -36,6 +36,10 @@ if [ $word1 = "yes" -o $word1 = "y" -o $word1 = "Y" ]; then
 	JDK=$(ls | grep jdk*)
 	sudo update-alternatives --install "/usr/bin/javac" "javac" "/opt/$JDK/bin/javac" 1
 	sudo update-alternatives --install "/usr/bin/jar" "jar" "/opt/$JDK/bin/jar" 1
+	sudo update-alternatives --install "/usr/bin/jarsigner" "jarsigner" "/opt/$JDK/bin/jarsigner" 1
+	sudo update-alternatives --install "/usr/bin/javadoc" "javadoc" "/opt/$JDK/bin/javadoc" 1
+	sudo update-alternatives --install "/usr/bin/javah" "javah" "/opt/$JDK/bin/javah" 1
+	sudo update-alternatives --install "/usr/bin/javap" "javap" "/opt/$JDK/bin/javap" 1
 	echo "JDK UPDATE COMPLETE"
 else
 	echo "OPERATION CANCELED"
